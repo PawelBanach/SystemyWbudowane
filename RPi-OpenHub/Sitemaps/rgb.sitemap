@@ -1,0 +1,9 @@
+sitemap default label="Testing RGB Led"
+{
+	Frame label="Raspberry Pi GPIO"
+	{
+		Colorpicker item=RGB
+		Colorpicker item=rgbLED
+	}
+
+}

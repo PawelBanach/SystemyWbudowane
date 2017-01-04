@@ -1,0 +1,19 @@
+sitemap home label="Home"
+{
+ //------------------------------------------------------------------------
+ // Raspberry Pi
+ // GPIO
+ //------------------------------------------------------------------------
+ Frame label="Rasperry Pi GPIO"
+ {
+   Switch item=RaspiLED
+ }
+
+
+ Frame label="Color LEDs"
+ {
+   Switch item=Red
+   Switch item=Green
+   Switch item=Blue
+ }
+}

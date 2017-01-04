@@ -1,0 +1,30 @@
+import org.openhab.core.library.types.*
+import org.openhab.model.script.actions.*
+
+var HSBType hsbValue
+
+rule "Set RGB value"
+	when 
+		Item RgbLED changed
+	then 
+		hsbValue = RgbLED.state as HSBType
+		// each int value is 0 to 100
+		var int redInt = hsbValue.red.intValue
+		var int greenInt = hsbValue.green.intValue
+		var int blueInt = hsbValue.blue.intValue
+		
+		// transform 0..100 to 0x0..0xffff
+		redInt = (redInt*0xffff)/100
+		greenInt = (greenInt*0xffff)/100
+		blueInt = (blueInt*0xffff)/100
+	
+
+	//TUTAJ POWINIENEM WYSLAC DO MOSQUITO TE TRZY WARTOSCI
+		logInfo("RGB", "\n\n\n\n CHANGE RGB \n\n\n\n")
+		logInfo("RGB", "\nRED: " + redInt.toString + "\nGREEN: " + greenInt.toString + "\nBLUE: " + blueInt.toString)
+		red.postUpdate((redInt/100).toString)
+		green.postUpdate((greenInt/100).toString)
+		blue.postUpdate((blueInt/100).toString)
+		//publish("mymosquitto", "home/rgbled", "RGBLED:::::\n\n\n" )
+
+end

@@ -1,0 +1,6 @@
+//Switch redLED{ gpio="pin:24"}
+//Switch blueLED{ gpio="pin:20"}
+//Switch greenLED{ gpio="pin:21"}
+//Color rgbLED {gpio="pin:24,20,21"}
+
+Color RGB "RGB LED"
