@@ -1,7 +1,7 @@
 sitemap default label="Main Menu"
 {
 	Frame label="MQTT Test" {
-		Text item=TestTemperature
-		Colorpicker item=RgbLED
+		Text item=Temperature
+		Colorpicker item=RgbLED icon="light-on"
 	}
 }

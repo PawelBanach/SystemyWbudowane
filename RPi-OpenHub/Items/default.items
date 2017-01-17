@@ -1,12 +1,7 @@
-Group All
-Group gGroundFloor (All)
-
-Group GF_Living "Living Room" <video> (gGroundFloor)
-
-Number TestTemperature "Temperature [%.1f F]" <temperature> (GF_Living) {mqtt="<[mymosquitto:home/temperature:state:default], >[mymosquitto:home/temperature2:state:*:default]"}
-
-Color RgbLED "RGB" (GF_Living) {mqtt=">[mymosquitto:home/rgbled:state:*:default]"}
+Color RgbLED "RGB" {mqtt=">[mymosquitto:home/rgbled:state:*:default]"}
 
 String red {mqtt=">[mymosquitto:home/rgbled/red:state:*:default]"}
 String green {mqtt=">[mymosquitto:home/rgbled/green:state:*:default]"}
 String blue {mqtt=">[mymosquitto:home/rgbled/blue:state:*:default]"}
+
+Number Temperature "Temperature [%.1f]" <temperature> {mqtt="<[mymosquitto:home/temperature:state:default]"}
